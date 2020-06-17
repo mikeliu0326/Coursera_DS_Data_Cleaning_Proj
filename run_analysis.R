@@ -1,10 +1,10 @@
 ## Obj 1: Merge training and test sets into one data set
 # Read in Feature Names
-feature_names = read.table("data/UCI HAR Dataset/features.txt")[,2]
+feature_names = read.table("UCI HAR Dataset/features.txt")[,2]
 
 # Read in data for Test and Train
-X_test = read.table("data/UCI HAR Dataset/test/X_test.txt")
-X_train = read.table("data/UCI HAR Dataset/train/X_train.txt")
+X_test = read.table("UCI HAR Dataset/test/X_test.txt")
+X_train = read.table("UCI HAR Dataset/train/X_train.txt")
 
 ## Obj 4: Appropriately label dataset, activity and subject labels come later
 # Label features of test and train
@@ -24,8 +24,8 @@ X_total = X_total[,extract_ind]
 
 
 # Read in Subject Numbers for train and test
-sub_test = read.table("data/UCI HAR Dataset/test/subject_test.txt")
-sub_train = read.table("data/UCI HAR Dataset/train/subject_train.txt")
+sub_test = read.table("UCI HAR Dataset/test/subject_test.txt")
+sub_train = read.table("UCI HAR Dataset/train/subject_train.txt")
 
 # Verify that the two subject vectors have the same number of rows
 #  After verifying, merge the two tables by row using rbind
@@ -38,9 +38,9 @@ names(sub_total) = "subject"
 
 ## Obj 3: Use descriptive activity names to name activities in labels
 # Read in Training and Test labels
-y_test = read.table("data/UCI HAR Dataset/test/y_test.txt")
-y_train = read.table("data/UCI HAR Dataset/train/y_train.txt")
-activity_labels = read.table("data/UCI HAR Dataset/activity_labels.txt")
+y_test = read.table("UCI HAR Dataset/test/y_test.txt")
+y_train = read.table("UCI HAR Dataset/train/y_train.txt")
+activity_labels = read.table("UCI HAR Dataset/activity_labels.txt")
 
 # Verify that the two label vectors have the same number of rows
 #  After verifying, merge the two tables by row using rbind
@@ -84,4 +84,4 @@ merged_tidy_avgs[1,4] == mean(merged_data$`tBodyAcc-mean()-X`
                               [which(merged_data$subject==1 & merged_data$activity=="LAYING")])
 
 ## Write the dataset
-write.table(merged_tidy_avgs,'data/merged_tidy_avgs_output.txt', row.name=FALSE)
+write.table(merged_tidy_avgs,'merged_tidy_avgs_output.txt', row.name=FALSE)
