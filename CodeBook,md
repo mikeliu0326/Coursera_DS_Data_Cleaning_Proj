@@ -1,0 +1,29 @@
+## Code Book
+## Data:
+X_test: test data for wearable tech, directly read in from X_test.txt
+X_train: training data for wearable tech, directly read in from X_train.txt
+feature_names: column names for X's, directly read in from features.txt
+
+sub_test: test subject numbers, directly read in from subject_test.txt
+sub_train: training subject numbers, directly read in from subject_train.txt
+
+y_test: test labels, directly read in from y_test.txt
+y_train: training labels, directly read in from y_train.txt
+activity_labels: table mapping labels to their activity text
+
+## Variables:
+X_total: merged version of X_test and X_train after feature names were applied
+         later subsetted using extract_ind
+extract_ind: indicies of the columns of X_total which include mean or std
+sub_total: merged sub_test and sub_train, label set to "subject"
+y_total: merged version of y_test and y_train, with label numbers mapped to their text using activity_labels
+
+merged_data: merged version of sub_total, y_total, X_total
+merged_tidy: melted version of merged_data, melted on columns subject and activity such that the variable column corresponds to the feature names from X, and the values column is its associated value
+merged_tidy_avgs: aggregated version of merged_tidy, mean of any values sharing the same subject, activity, and variable (feature from X)
+
+## Transformations:
+cbind: used to combine datasets by column (ie X, y, sub)
+rbind: used to combine datasets by row (ie train and test)
+melt: used to transform a dataset into a stacked/tidy version of itself
+aggregate: used to apply an aggregate function to any values in a dataset that satisfy a specified condition
