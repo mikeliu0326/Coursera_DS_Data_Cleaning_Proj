@@ -4,7 +4,7 @@ Outputs a tidied dataset composed of the subject labels, activity names, measure
 
 # Process
 1. Reads in training and test data, as well as feature names, which is used to rename the columns of the data.
-2. Veryify that both datasets have the same number of columns, then merge them by column. 
+2. Verify that both datasets have the same number of columns, then merge them by column. 
 3. Drop any columns not associated with mean or std. 
 4. Read in subject training and text data, merge them and rename. 
 5. Read in activity labels for training and test data, merge them and map their numeric labels to the appropriate activity description in activity_labels.txt. 
