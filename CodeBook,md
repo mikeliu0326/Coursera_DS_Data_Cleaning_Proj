@@ -20,7 +20,11 @@ y_total: merged version of y_test and y_train, with label numbers mapped to thei
 
 merged_data: merged version of sub_total, y_total, X_total
 merged_tidy: melted version of merged_data, melted on columns subject and activity such that the variable column corresponds to the feature names from X, and the values column is its associated value
+
+## Summaries:
 merged_tidy_avgs: aggregated version of merged_tidy, mean of any values sharing the same subject, activity, and variable (feature from X)
+ All metrics with prefix t are in terms of time domain signals captured at a constant rate of 50 Hz, then normalized via Euclidean norm. 
+ All metrics with prefix f are similarly captured, then had a Fast Fourier Transform applied.
 
 ## Transformations:
 cbind: used to combine datasets by column (ie X, y, sub)
